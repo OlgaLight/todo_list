@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125074744) do
+ActiveRecord::Schema.define(version: 20160129135953) do
 
   create_table "profiles", force: :cascade do |t|
     t.string   "gender"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160125074744) do
     t.string   "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "todo_items", force: :cascade do |t|
@@ -27,8 +28,9 @@ ActiveRecord::Schema.define(version: 20160125074744) do
     t.string   "title"
     t.text     "description"
     t.boolean  "completed"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "todo_list_id"
   end
 
   create_table "todo_lists", force: :cascade do |t|
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160125074744) do
     t.date     "list_due_date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
