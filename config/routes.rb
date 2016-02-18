@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: "todo_lists#index"
+   root to: "todo_lists#index"
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   end
   resources :profiles
   resources :users
-  #
-  # get "/login" => "sessions#new", as: "login"
-  # delete "/logout" => "sessions#destroy", as: "logout"
 
 
   get "/login" => "sessions#new", as: "login"
